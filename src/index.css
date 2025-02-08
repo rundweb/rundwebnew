@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .fixed-layer {
+    @apply fixed  left-0 w-full min-h-screen;
+  }
+  .button-black {
+    @apply h-10 bg-neutral-900 flex items-center justify-center text-white capitalize font-inter px-4 lg:px-5 rounded-lg shadow-xl font-semibold tracking-wide hover:bg-white hover:text-neutral-900 duration-300 ease-in-out;
+  }
+
+}
