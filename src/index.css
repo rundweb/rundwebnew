@@ -9,7 +9,16 @@
     @apply fixed  left-0 w-full min-h-screen;
   }
   .button-black {
-    @apply h-10 bg-neutral-900 flex items-center justify-center text-white capitalize font-inter px-4 lg:px-5 rounded-lg shadow-xl font-semibold tracking-wide hover:bg-white hover:text-neutral-900 duration-300 ease-in-out;
+    @apply h-10 bg-blue-600 flex items-center justify-center text-white capitalize font-inter px-4 lg:px-5 rounded-lg shadow-xl font-semibold tracking-wide hover:bg-white hover:text-neutral-900 duration-300 ease-in-out;
   }
 
+  span {
+    @apply text-blue-600;
+  }
+
+  .neophormise {
+    background: #ffffff;
+    box-shadow: 8px 8px 24px #d9d9d9, -8px -8px 24px #ffffff;
+  }
+  
 }
