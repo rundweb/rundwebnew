@@ -1,4 +1,6 @@
 import AboutComponents from './components/AboutComponents';
+import ContactComponents from './components/ContactComponents';
+import FooterComponents from './components/FooterComponents';
 import HomeComponents from './components/HomeComponents';
 import LoaderComponents from './components/LoaderComponents';
 import NavbarComponents from './components/NavbarComponents'
@@ -15,6 +17,8 @@ const App = () => {
     <ProductComponents/>
     <ServiceComponents/>
     <TestimonialComponents/>
+    <ContactComponents/>
+    <FooterComponents/>
   </div>;
 };
 

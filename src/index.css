@@ -22,3 +22,7 @@
   }
   
 }
+
+.swiper-wrapper {
+  transition-timing-function: linear !important ;
+}

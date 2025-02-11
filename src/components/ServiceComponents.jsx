@@ -79,7 +79,7 @@ const ServiceComponents = () => {
     setOpenService(true);
   };
   return (
-    <section id="service" className="min-h-screen bg-gray-100">
+    <section id="service" className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="max-w-7xl m-auto p-5 py-12 md:py-20 flex items-center flex-col justify-center gap-10">
         <div className="flex items-center flex-col gap-5 text-center">
           <h1

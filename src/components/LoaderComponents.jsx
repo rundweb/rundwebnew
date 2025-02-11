@@ -35,7 +35,7 @@ const LoaderComponents = () => {
     );
     setTimeout(() => {
       setLoader(false);
-    }, 4000);
+    }, 3200);
   }, []);
   return (
     <section

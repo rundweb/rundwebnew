@@ -3,6 +3,7 @@ import { MdFormatQuote } from "react-icons/md";
 import envanto from "../assets/envanto.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Autoplay } from "swiper/modules";
 const TestimonialComponents = () => {
   const testimonials = [
     {
@@ -44,18 +45,29 @@ const TestimonialComponents = () => {
   ];
 
   return (
-    <section id="testimonial" className="min-h-screen flex items-center justify-center py-10">
-      <div className="flex flex-col gap-5 md:gap-8 w-full">
+    <section
+      id="testimonial"
+      className="min-h-screen flex items-center justify-center py-10"
+    >
+      <div className="flex flex-col gap-5 w-full">
         <div className="flex flex-col gap-4 items-center justify-center px-5 text-center">
-          <h1 className="font-bold text-neutral-800 text-4xl capitalize md:text-5xl">
+          <h1
+            className="font-bold text-neutral-800 text-4xl capitalize md:text-5xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Success Stories from Our Clients
           </h1>
-          <h2 className="text-neutral-800/70 tracking-wide font-medium">
+          <h2
+            className="text-neutral-800/80 tracking-wide font-medium"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Great websites drive great businesses. See what our clients have to
             say!
           </h2>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
           <Swiper
             slidesPerView={1}
             loop={true}
@@ -68,14 +80,19 @@ const TestimonialComponents = () => {
               },
               1240: {
                 slidesPerView: 4,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
             }}
-            className=""
+            speed={6000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
           >
             {testimonials.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="bg-white m-5 my-10 flex flex-col gap-5 shadow-xl rounded-lg p-5 font-inter ">
+                <div className="bg-white m-5 my-10 flex flex-col gap-5 shadow-xl rounded-lg p-5 font-inter md:h-72 md:justify-between">
                   <div className="flex items-center justify-start gap-1 text-yellow-500 text-xl">
                     <IoIosStar />
                     <IoIosStar />
@@ -85,7 +102,7 @@ const TestimonialComponents = () => {
                   </div>
                   <div className="flex items-start">
                     <div>
-                      <MdFormatQuote className="text-blue-600" />
+                      <MdFormatQuote className="text-blue-600 text-xl" />
                     </div>
                     <h1 className="font-medium tracking-wide text-neutral-800/90">
                       {item.testimonial}
@@ -95,12 +112,12 @@ const TestimonialComponents = () => {
                     <div>
                       <img
                         src={envanto}
-                        className="w-14 h-14"
+                        className="w-12 h-12"
                         alt="envanto logo"
                       />
                     </div>
                     <div>
-                      <h1 className="text-neutral-900 font-semibold tracking-wide text-lg">
+                      <h1 className="text-neutral-900 font-semibold tracking-wide text-base">
                         {item.name}
                       </h1>
                       <h2 className="text-blue-600 font-medium tracking-wide text-sm">
