@@ -3,49 +3,51 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa6";
+import { useState } from "react";
+import MaintenanceComponents from "./MaintenanceComponents";
 const FooterComponents = () => {
   const companyItems = [
     {
       name: "Blog",
-      path: "blog",
+      path: "",
     },
     {
       name: "Pricing",
-      path: "pricing",
+      path: "",
     },
     {
       name: "Demo",
-      path: "portfolio",
+      path: "",
     },
   ];
 
   const resourceItems = [
     {
       name: "Documentation",
-      path: "documentation",
+      path: "",
     },
     {
       name: "Service",
-      path: "service",
+      path: "",
     },
     {
       name: "Testimonial",
-      path: "testimonial",
+      path: "",
     },
   ];
 
   const legalItems = [
     {
       name: "Terms of Service",
-      path: "term",
+      path: "",
     },
     {
       name: "Privacy Policy",
-      path: "privacy",
+      path: "",
     },
     {
       name: "Cookies Policy",
-      path: "cookies",
+      path: "",
     },
   ];
 
@@ -60,17 +62,17 @@ const FooterComponents = () => {
       icon: FaTwitter,
     },
   ];
+
+  const [openMaintenance, setOpenMaintenance] = useState(true);
+
+  const handleMaintenance = () => {
+    setOpenMaintenance(false);
+  };
   return (
     <section className="bg-neutral-800 p-5 py-12 flex flex-col gap-10">
       <div className="max-w-7xl m-auto w-full flex flex-col gap-5 md:flex-row justify-between">
         <div className="flex flex-col gap-2 w-full">
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            offset={-50}
-            className="text-white font-inter font-bold tracking-wide text-xl"
-          >
+          <Link className="text-white font-inter font-bold tracking-wide text-xl">
             RUND<span>WEB</span>
           </Link>
           <h1 className="text-white font-inter font-bold tracking-wide text-2xl max-w-xs">
@@ -84,46 +86,37 @@ const FooterComponents = () => {
           <div className="flex flex-col gap-1 text-white">
             <h1 className="font-inter font-semibold text-lg">Company</h1>
             {companyItems.map((item, i) => (
-              <Link
-                to={item.path}
-                smooth={true}
-                duration={500}
-                offset={-50}
+              <div
+                onClick={handleMaintenance}
                 key={i}
                 className="text-white/80 tracking-wide hover:text-blue-600 duration-300 ease-in-out cursor-pointer"
               >
                 {item.name}
-              </Link>
+              </div>
             ))}
           </div>
           <div className="flex flex-col gap-1 text-white">
             <h1 className="font-inter font-semibold text-lg">Resources</h1>
             {resourceItems.map((item, i) => (
-              <Link
-                to={item.path}
-                smooth={true}
-                duration={500}
-                offset={-50}
+              <div
+                onClick={handleMaintenance}
                 key={i}
                 className="text-white/80 tracking-wide hover:text-blue-600 duration-300 ease-in-out cursor-pointer"
               >
                 {item.name}
-              </Link>
+              </div>
             ))}
           </div>
           <div className="flex flex-col gap-1 text-white">
             <h1 className="font-inter font-semibold text-lg">Legal</h1>
             {legalItems.map((item, i) => (
-              <Link
-                to={item.path}
-                smooth={true}
-                duration={500}
-                offset={-50}
+              <div
+                onClick={handleMaintenance}
                 key={i}
                 className="text-white/80 tracking-wide hover:text-blue-600 duration-300 ease-in-out cursor-pointer"
               >
                 {item.name}
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -139,12 +132,20 @@ const FooterComponents = () => {
           {socialItems.map((item, i) => (
             <div
               key={i}
-              className="bg-neutral-700 w-8 h-8 flex items-center justify-center rounded-lg text-white border-white border-[1px]  cursor-pointer group duration-300 ease-in-out hover:scale-110"
+              className="bg-neutral-700 w-8 h-8 flex items-center justify-center rounded-lg text-white border-white border-[1px] "
             >
-              <item.icon className="text-lg duration-300 ease-in-out" />
+              <item.icon className="text-lg" />
             </div>
           ))}
         </div>
+      </div>
+
+      <div
+        className={`fixed z-[100] top-0 left-0 w-full min-h-screen bg-white ${
+          openMaintenance ? "hidden" : "flex"
+        } items-center justify-center p-5`}
+      >
+        <MaintenanceComponents/>
       </div>
     </section>
   );

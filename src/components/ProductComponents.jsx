@@ -4,6 +4,7 @@ import product3 from "../assets/rundshop.svg";
 import product4 from "../assets/furniture.svg";
 import product5 from "../assets/rundgame.svg";
 import product6 from "../assets/designsolution.svg";
+import product7 from "../assets/elevatex.svg";
 import { HiMiniArrowRight } from "react-icons/hi2";
 const ProductComponents = () => {
   const productItem = [
@@ -36,6 +37,11 @@ const ProductComponents = () => {
       name: "DesignSolutions – Creative & Modern Web Design Agency Template",
       img: product6,
       link: "https://rundweb.github.io/designsolutions/",
+    },
+    {
+      name: "ElevateX - Building Digital Products & Brands",
+      img: product7,
+      link: "https://elevatexrundweb.netlify.app/",
     },
   ];
 
